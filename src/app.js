@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import NEOIndex from './components/Index';
+import NeoIndex from './components/Index';
+import NeoShow from './components/Show';
 import Hero from './components/Hero';
 
 import 'bulma';
@@ -18,7 +19,8 @@ class App extends React.Component{
           <Hero/>
           <section className="section">
             <div className="container">
-              <Route exact path='/' component={NEOIndex}/>
+              <Route exact path='/' component={NeoIndex}/>
+              <Route exact path='/:id' component={NeoShow}/>
             </div>
           </section>
         </main>

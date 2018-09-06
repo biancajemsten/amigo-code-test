@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class NEOIndex extends React.Component {
+class NeoIndex extends React.Component {
   constructor(){
     super();
     this.state = {
@@ -60,4 +60,4 @@ class NEOIndex extends React.Component {
 
 }
 
-export default NEOIndex;
+export default NeoIndex;
