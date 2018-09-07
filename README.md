@@ -44,7 +44,7 @@ Given that the index page only shows the past 7 days of NEOs the favorite list c
 
 #### Blockers
 - The data that came back from the API was quite nested and difficult to work with at times.
-- Would have liked to use GraphQL but didn't feel like I was confident enough in it to complete the code test in a short amount of time.
+- Would have liked to use GraphQL but didn't feel confident enough in it to complete the code test in a short amount of time.
 
 #### Wins
 - Axios request is dynamic and changes every day with help of Moment.js.
