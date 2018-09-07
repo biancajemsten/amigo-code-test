@@ -46,7 +46,7 @@ class NeoIndex extends React.Component {
                   <tr key={i}>
                     <td>{neo.name}</td>
                     <td>{neo.neo_reference_id}</td>
-                    <td><Link to={`/${neo.neo_reference_id}`}>Click</Link></td>
+                    <td><Link to={`/${neo.neo_reference_id}`}>Click Here</Link></td>
                   </tr>
                 )}
               </tbody>

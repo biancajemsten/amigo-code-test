@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class NeoShow extends React.Component {
 
@@ -12,8 +13,6 @@ class NeoShow extends React.Component {
   }
 
   componentWillMount(){
-    // if(localStorage.includes(this.state.neo.id)) this.setState({favorite: true});
-
     axios({
       url: `https://api.nasa.gov/neo/rest/v1/neo/${this.props.match.params.id}?api_key=NXdg6uoUVxUVonkRFoatgFJBvv6AyMeCvQy332u4`,
       method: 'GET'
@@ -92,6 +91,7 @@ class NeoShow extends React.Component {
             </tr>
           </tbody>
         </table>
+        <Link to='/'>Back to index</Link>
       </div>
     );
   }

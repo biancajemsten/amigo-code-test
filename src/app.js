@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import NeoIndex from './components/Index';
 import NeoShow from './components/Show';
+import Favorites from './components/Favorites';
 import Hero from './components/Hero';
 
 import 'bulma';
@@ -19,8 +19,11 @@ class App extends React.Component{
           <Hero/>
           <section className="section">
             <div className="container">
-              <Route exact path='/' component={NeoIndex}/>
-              <Route exact path='/:id' component={NeoShow}/>
+              <Switch>
+                <Route exact path='/' component={NeoIndex}/>
+                <Route exact path='/favorites' component={Favorites}/>
+                <Route exact path='/:id' component={NeoShow}/>
+              </Switch>
             </div>
           </section>
         </main>
