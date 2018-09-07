@@ -12,6 +12,11 @@ class Favorites extends React.Component {
   }
 
   componentWillMount(){
+    this.getFavorites();
+  }
+
+  //function that stores the localStorage values into IDS and keys into Names so they can be iterated over in the table
+  getFavorites = () => {
     let ids = Array.from(Object.values(localStorage));
     ids.splice(ids.length-1, 1)
     let names = Array.from(Object.keys(localStorage))
@@ -19,11 +24,10 @@ class Favorites extends React.Component {
     this.setState({ids , names });
   }
 
-
   render(){
-    console.log(this.state);
     return(
       <div>
+        <h1 className="title is-1">My Favorite NEOs <i className="fas fa-star"></i></h1>
         <table className="table is-hoverable is-bordered">
           <thead>
             <tr>

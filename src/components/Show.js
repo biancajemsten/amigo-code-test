@@ -18,7 +18,6 @@ class NeoShow extends React.Component {
       method: 'GET'
     })
       .then(res => {
-        console.log(res.data);
         const estimatedDiameter = Object.values(res.data.estimated_diameter);
         const close_approach = Object.values(res.data.close_approach_data);
         const neo = {
@@ -37,22 +36,22 @@ class NeoShow extends React.Component {
       });
   }
 
+  //function that checks if an item is already favorited. If not it gets added to localStorage
   favoriteIt = () => {
-    this.favorite = !this.favorite;
-    if(this.favorite) localStorage.setItem(`${this.state.neo.name}`,`${this.state.neo.id}`);
-    if (Object.keys(localStorage).indexOf(this.state.neo.name) > -1) {
-      console.log('is favorited');
+    const favoriteIds = Object.values(localStorage);
+    if (favoriteIds.indexOf(this.state.neo.id) === -1) {
+      localStorage.setItem(`${this.state.neo.name}`,`${this.state.neo.id}`);
       this.setState({favorite: true});
+    } else {
+      localStorage.removeItem(this.state.neo.name);
+      this.setState({favorite: false});
     }
   }
 
   checkIfFavorited = () => {
-    console.log(Object.keys(this.state.neo));
     if (Object.keys(localStorage).indexOf(this.state.neo.name) > -1) {
-      console.log('has test1');
       this.setState({favorite: true});
     }
-    console.log('from check',this.state.favorite);
   }
 
 

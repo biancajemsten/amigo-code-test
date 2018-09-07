@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 
 class Hero extends React.Component {
 
+  constructor(){
+    super();
+    this.state = {
+      index: false,
+      favorites: false
+    };
+  }
+
   render() {
     return(
       <section className="hero">
@@ -23,11 +31,11 @@ class Hero extends React.Component {
           <nav className="tabs is-boxed is-fullwidth">
             <div className="container">
               <ul>
-                <li className="is-active">
-                  <Link to='/'>All NEOs</Link>
+                <li>
+                  <Link to='/'>NEO List</Link>
                 </li>
                 <li>
-                  <Link to='/favorites'>My favorited NEOs</Link>
+                  <Link to='/favorites'>My favorite NEOs</Link>
                 </li>
               </ul>
             </div>
