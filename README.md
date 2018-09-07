@@ -13,6 +13,8 @@ The premise of the code test was to meet the following criteria:
 
 I chose to build a front end application RESTful in React, SCSS, Bulma, Moment.js, Babel, Webpack, Axios, and utilise LocalStorage to store the information about favorites. The third party API I chose is NASA's API for [Near Earth Objects](https://api.nasa.gov/api.html#NeoWS). I chose this one because it had a client side library so it was easy to implement it without a backend.
 
+<p align="center"><img src="https://i.imgur.com/XVRnqI9.png" width="700"></p>
+
 #### Build process
 
 ###### Third Party API
