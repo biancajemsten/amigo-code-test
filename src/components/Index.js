@@ -36,9 +36,9 @@ class NeoIndex extends React.Component {
         <hr/>
         <div className="columns is-multiline is-mobile">
           {this.state.dates.map((date, index) =>
-            <div className="column is-one-third-desktop is-half-tablet is-half-mobile" key={index}>
+            <div className="column is-one-third-desktop is-half-tablet is-full-mobile" key={index}>
               <h2 className="title is-2">{moment(date).format('ddd, MMM Do')}</h2>
-              <table className="table is-hoverable is-bordered">
+              <table className="table is-hoverable is-bordered is-fullwidth">
 
                 <thead>
                   <tr>

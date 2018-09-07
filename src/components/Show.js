@@ -29,17 +29,14 @@ class NeoShow extends React.Component {
           close_approaches: close_approach.length,
           id: res.data.neo_reference_id
         };
-        if (Object.keys(localStorage).indexOf(neo.name) > -1) {
-          this.setState({favorite: true});
-        }
+        this.checkIfFavorited(neo.name);
         this.setState({neo});
       });
   }
 
-  //function that checks if an item is already favorited. If not it gets added to localStorage
+  //onClick function that checks if an item is already favorited. If not it gets added to localStorage, if yes it gets removed
   favoriteIt = () => {
-    const favoriteIds = Object.values(localStorage);
-    if (favoriteIds.indexOf(this.state.neo.id) === -1) {
+    if (Object.values(localStorage).indexOf(this.state.neo.id) === -1) {
       localStorage.setItem(`${this.state.neo.name}`,`${this.state.neo.id}`);
       this.setState({favorite: true});
     } else {
@@ -48,8 +45,9 @@ class NeoShow extends React.Component {
     }
   }
 
-  checkIfFavorited = () => {
-    if (Object.keys(localStorage).indexOf(this.state.neo.name) > -1) {
+  //function that checks if current NEO is already favorited and if so sets favorite to true
+  checkIfFavorited = (name) => {
+    if (Object.keys(localStorage).indexOf(name) > -1) {
       this.setState({favorite: true});
     }
   }
@@ -64,7 +62,7 @@ class NeoShow extends React.Component {
           {this.state.favorite ? <i className="fas fa-star"></i> : <i className="far fa-star"></i>}
           <p>Favorite this Neo</p>
         </div>
-        <table className='table is-hoverable is-bordered'>
+        <table className='table is-hoverable is-bordered is-fullwidth'>
           <tbody>
             <tr>
               <td><strong>Absolute Magnitude </strong></td>
@@ -75,11 +73,11 @@ class NeoShow extends React.Component {
               <td>{this.state.neo.close_approaches}</td>
             </tr>
             <tr>
-              <td><strong>Estimated Diameter in meters </strong></td>
+              <td><strong>Estimated diameter in meters </strong></td>
               <td>{this.state.neo.diameterInM}</td>
             </tr>
             <tr>
-              <td><strong>Estimated Diameter in feet </strong></td>
+              <td><strong>Estimated diameter in feet </strong></td>
               <td>{this.state.neo.diameterInFt}</td>
             </tr>
             <tr>

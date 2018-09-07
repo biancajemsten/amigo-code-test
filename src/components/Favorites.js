@@ -28,7 +28,7 @@ class Favorites extends React.Component {
     return(
       <div>
         <h1 className="title is-1">My Favorite NEOs <i className="fas fa-star"></i></h1>
-        <table className="table is-hoverable is-bordered">
+        <table className="table is-hoverable is-bordered is-fullwidth">
           <thead>
             <tr>
               <th>Name</th>
