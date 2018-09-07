@@ -20,7 +20,6 @@ class NeoIndex extends React.Component {
       method: 'GET'
     })
       .then(res => {
-        console.log(res.data);
         const dates = Object.keys(res.data.near_earth_objects);
         const neos = Object.values(res.data.near_earth_objects);
         this.setState({dates, neos});

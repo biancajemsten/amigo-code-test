@@ -17,10 +17,10 @@ class Hero extends React.Component {
         <div className="hero-body">
           <div className="container">
             <div className="title-container">
-              <h1 className="title">
+              <h1 className="title is-1">
                 NASA
               </h1>
-              <h2 className="subtitle">
+              <h2 className="subtitle is-2">
                 Near Earth Objects
               </h2>
             </div>
