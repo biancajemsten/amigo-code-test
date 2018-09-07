@@ -56,7 +56,7 @@ class NeoShow extends React.Component {
   render(){
     if(!this.state.neo) return <h1 className="title is-1">Loading...</h1>;
     return(
-      <div>
+      <div className="showWrapper">
         <h1 className="title is-1">Near Earth Object {this.state.neo.name}</h1>
         <div onClick={this.favoriteIt} className="favoriteDiv">
           {this.state.favorite ? <i className="fas fa-star"></i> : <i className="far fa-star"></i>}
