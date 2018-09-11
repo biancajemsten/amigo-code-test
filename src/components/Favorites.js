@@ -18,9 +18,9 @@ class Favorites extends React.Component {
   //function that stores the localStorage values into IDS and keys into Names so they can be iterated over in the table
   getFavorites = () => {
     let ids = Array.from(Object.values(localStorage));
-    ids.splice(ids.length-1, 1)
+    ids.splice(ids.length-2, 2)
     let names = Array.from(Object.keys(localStorage))
-    names.splice(names.length-1, 1);
+    names.splice(names.length-2, 2);
     this.setState({ids , names });
   }
 
